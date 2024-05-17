@@ -1,0 +1,807 @@
+{% extends 'App/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <style type="text/css">
+    
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 80vh;
+  
+  background-size: cover;
+  margin-bottom: -200px;
+}
+
+#hero .container {
+  position: relative;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #2c4964;
+}
+
+#hero h2 {
+  color: #2c4964;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  margin-top: 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: #fff;
+  background: #1977cc;
+}
+
+#hero .btn-get-started:hover {
+  background: #3291e6;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero {
+    margin-bottom: 0;
+    height: 50vh;
+  }
+  #hero .container {
+    padding-bottom: 63px;
+  }
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-height: 600px) {
+  #hero {
+    height: 50vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f1f7fd;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: 20px;
+
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: white;
+}
+.service-name{
+  color: white;
+}
+
+.section-title h2::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1977cc;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0;
+  background-color: #f1f7fd;
+  min-height: 40px;
+  margin-top: 120px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 63px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs h2 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+  .breadcrumbs ol {
+    display: block;
+  }
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us .content {
+  padding: 30px;
+  background-color: rgb(5,5,49);
+  border-radius: 6px;
+  color: #fff;
+  border: 2px solid white;
+  
+}
+
+.why-us .content h3 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.why-us .content p {
+  margin-bottom: 30px;
+}
+
+.why-us .content .more-btn {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 30px 8px 30px;
+  color: #fff;
+  border-radius: 50px;
+  transition: all ease-in-out 0.4s;
+}
+
+.why-us .content .more-btn i {
+  font-size: 14px;
+}
+
+.why-us .content .more-btn:hover {
+  color: #1977cc;
+  background: #fff;
+}
+
+.why-us .icon-boxes .icon-box {
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: -10px 10px  10px rgba(0,0,0,0.3)
+  padding: 40px 30px;
+  width: 100%;
+}
+
+.why-us .icon-boxes .icon-box i {
+  font-size: 40px;
+  color: #1977cc;
+  margin-bottom: 30px;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+}
+
+.why-us .icon-boxes .icon-box p {
+  font-size: 15px;
+  color: #848484;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .icon-boxes h4 {
+  font-size: 18px;
+  color: #4b7dab;
+  margin-bottom: 15px;
+}
+
+.about .icon-boxes h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c4964;
+  margin-bottom: 15px;
+}
+
+.about .icon-box {
+  margin-top: 40px;
+}
+
+.about .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #8dc2f1;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.about .icon-box .icon i {
+  color: #1977cc;
+  font-size: 32px;
+}
+
+.about .icon-box:hover .icon {
+  background: green;
+  border-color: #1977cc;
+}
+
+.about .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.about .icon-box .title {
+  margin-left: 85px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.about .icon-box .title a {
+  color: #343a40;
+  transition: 0.3s;
+}
+
+.about .icon-box .title a:hover {
+  color: #1977cc;
+}
+
+.about .icon-box .description {
+  margin-left: 85px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.about .video-box {
+  background: url("../img/about.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.about .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(#1977cc 50%, rgba(25, 119, 204, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+
+.about .play-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.about .play-btn::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation: pulsate-btn 2s;
+  animation: pulsate-btn 2s;
+  -webkit-animation-direction: forwards;
+  animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(25, 119, 204, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.about .play-btn:hover::after {
+  border-left: 15px solid #1977cc;
+  transform: scale(20);
+}
+
+.about .play-btn:hover::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  -webkit-animation: none;
+  animation: none;
+  border-radius: 0;
+}
+
+@-webkit-keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/*STYLES FOR LOGIN PAGE*/
+
+
+.login{
+  /*position: absolute;*/
+  top: 0%;
+  left: 0%;
+  /*width: 400px;*/
+  padding: 40px;
+ /* transform: translate(-50%, -50%);*/
+     background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("{% static 'App/assets/images/1q.jpeg' %}");
+
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-bottom: 1.50px solid #03e9f4;
+  border-radius: 10px;
+
+}
+.login h2{
+  margin: 0 0 30px;
+  padding: 0;
+  color: #03e9f4;
+  text-align: center;
+}
+
+
+.login .user-box{
+  position: relative;
+}
+.login .user-box input{
+  width: 100%;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #03e9f4;
+  outline: none;
+  background: transparent;
+}
+.login .user-box label{
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  color: #03e9f4;
+  pointer-events: none;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.login .user-box input:focus ~ label,
+.login .user-box input:valid ~ label{
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+.login p{
+  color: darkgray;
+  cursor: pointer;
+}
+.login p span{
+  color: #03e9f4;
+  float: right;
+}
+.login form .link-btn{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.login .link-btn:hover{
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+input[type="submit"]{
+
+    position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+
+
+
+}
+/*input[type="submit"]{
+    background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+
+    }*/
+.login .link-btn span{
+  position: absolute;
+  display: block;
+}
+.login .link-btn span:nth-child(1){
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animatedbtn1 1s linear infinite;
+}
+@keyframes animatedbtn1{
+  0%{
+    left: -100%;
+  }
+  50%,100%{
+    left: 100%;
+  }
+}
+.login .link-btn span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animatedbtn2 1s linear infinite;
+  animation-delay: .25s;
+}
+@keyframes animatedbtn2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+
+.login .link-btn span:nth-child(3){
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animatedbtn3 1s linear infinite;
+  animation-delay: .5s;
+}
+@keyframes animatedbtn3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+
+.login .link-btn span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animatedbtn4 1s linear infinite;
+  animation-delay: .75s;
+}
+@keyframes animatedbtn4{
+  0%{
+    bottom: -100%;
+  }
+  50%,100%{
+    bottom: 100%;
+  }
+}
+@media screen and (max-width:430px){
+  .login{
+    width: 90%;
+  }
+}
+
+
+
+  </style>
+
+</head>
+
+<body style="background-color: rgb(5,5,49);overflow: hidden;">
+ 
+    
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center" style="background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url({% static 'App/assets/images/bc.jpeg' %});background-size: cover;">
+    <div class="container">
+     <h3 style="color: yellow;font-size: 35px;text-align: center;font-weight: bold;font-family: serif;">STUDENTS PAYMENT SYSTEM</h3>
+     <center>
+       <span style="color: white;text-align: center;font-size: 23px;background-color: green;padding: 10px;margin-top: 12px;border-radius: 10px;border-top-right-radius: 0px;">Kisesa Primary & Secondary School</span>
+       </center>
+     
+    <!----  <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    ---->
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+   
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content" >
+              <h3>SCHOOL PAYMENT SYSTEM</h3>
+              {% if user.is_authenticated %}
+              <p>
+                Welcome to School Payment System, now you are logged in as {{user.username}}
+                    </p>
+                    {% else %}
+                    <p>
+                Welcome to School Payment System, <br>
+                Login here <button class="get-started-btn" data-bs-toggle="modal" data-bs-target="#login" style="margin-top: 15px;">Login here </button> 
+                    </p>
+
+                    {% endif %}
+              <div class="text-center">
+              <!---- <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+             ---->
+             
+              </div>
+            </div>
+          </div>
+          
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+
+
+
+
+
+
+
+
+
+<!-- Modal  for SIGNUP BUTTON -->
+
+
+<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"> STEDENTS PAYMENT STSTEM </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="font-size: 22px;">
+
+        
+         <div class="login">
+    <h2 style="font-size: 18px;font-family: sans-serif;">Signin here</h2>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+     
+
+      <div class="user-box">
+        <input type="text" name="username" required>
+        <label>UserName</label>
+      </div>
+
+      <div class="user-box">
+        <input type="password" name="password" required>
+        <label>Password</label>
+      </div>
+
+      
+
+     <!--  <p><input type="checkbox">Remember me <span>Forgot?</span></p> -->
+
+        <a href="" class="link-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+
+
+        <button type="submit"  style="background-color: green;color: white;padding: 10px;padding-right: 20px;padding-left: 20px;font-size: 20px;border-radius: 10px;">Signin</button>
+      </a>
+
+     <!--  <div class="options-02">
+                    <p>You don't have an account? <a href="" style="font-size: 18px;color: lightblue;font-weight: bold;text-decoration: none;">Sign Up</a></p>
+                </div> -->
+    </form>
+  </div>
+
+</div> 
+<!-- mwisho wa modal-body -->
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="font-size: 18px;">Close</button>
+
+
+
+
+             </div>
+    </div>
+  </div>
+</div>
+<!--MWISHO WA  Modal  for SIGNUP BUTTON -->
+
+
+
+
+
+
+
+  </main><!-- End #main -->
+
+
+
+  
+
+</body>
+
+</html>
+{% endblock %}
